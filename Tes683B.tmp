@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0g7ofb88dbk"]
+
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="1_2uw0g"]
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_cd8rg"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="2_t7s6j"]
+[ext_resource type="AudioStream" uid="uid://dmnqymtftw2ux" path="res://IMSLP_INTRO_RONDO.mp3" id="3_e4o16"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_cd8rg")
+
+[node name="FixedBox" parent="." instance=ExtResource("1_2uw0g")]
+position = Vector2(64, 216)
+rotation = 0.785398
+scale = Vector2(4, 4)
+
+[node name="EscapeBox" parent="." instance=ExtResource("2_t7s6j")]
+position = Vector2(80, 72)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(64, 216)
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("3_e4o16")
+autoplay = true

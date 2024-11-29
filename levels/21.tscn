@@ -1,0 +1,336 @@
+[gd_scene load_steps=9 format=3 uid="uid://5xntftp87mb6"]
+
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_xo03w"]
+[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="2_6mw12"]
+[ext_resource type="AudioStream" uid="uid://bf0ydi6il5xcc" path="res://music/IMSLP_1041_III.mp3" id="3_53emo"]
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="5_otq8k"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="6_tt5vn"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="7_asix6"]
+[ext_resource type="PackedScene" uid="uid://cfmecn0xaqabn" path="res://player.tscn" id="7_ua77l"]
+[ext_resource type="PackedScene" uid="uid://b8fjslmbr1cmy" path="res://player_end.tscn" id="8_48dgt"]
+
+[node name="LVL" type="Node2D"]
+script = ExtResource("1_xo03w")
+
+[node name="BGElement" parent="." instance=ExtResource("2_6mw12")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("3_53emo")
+autoplay = true
+
+[node name="FAILED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="FAILED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FAILED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+
+[node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "FAILED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+
+[node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="PASSED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="PASSED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PASSED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+
+[node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "PASSED
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+
+[node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_asix6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "N CLICKS
+"
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("7_ua77l")]
+position = Vector2(448, 320)
+scale = Vector2(16, 2)
+
+[node name="PlayerEnd" parent="." instance=ExtResource("8_48dgt")]
+position = Vector2(192, 320)
+scale = Vector2(2, 2)
+
+[node name="PlayerEnd2" parent="." instance=ExtResource("8_48dgt")]
+position = Vector2(448, 320)
+scale = Vector2(2, 2)
+
+[node name="PlayerEnd3" parent="." instance=ExtResource("8_48dgt")]
+position = Vector2(704, 320)
+scale = Vector2(2, 2)
+
+[node name="PlayerEnd4" parent="." instance=ExtResource("8_48dgt")]
+position = Vector2(960, 320)
+scale = Vector2(2, 2)
+
+[node name="FixedBox" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(320, 352)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox2" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(576, 352)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox3" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(576, 288)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox5" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(832, 352)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox6" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(832, 288)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox7" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(1088, 352)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox8" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(1088, 288)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox4" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(320, 288)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox9" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(64, 352)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox10" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(64, 288)
+scale = Vector2(6, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox11" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(576, 16)
+scale = Vector2(70, 2)
+
+[node name="FixedBox12" parent="." instance=ExtResource("5_otq8k")]
+position = Vector2(576, 632)
+scale = Vector2(70, 2)
+
+[node name="EscapeBox" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, -32)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox2" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, -96)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox3" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, -96)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox7" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, -32)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox8" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(704, -96)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox9" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, -160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox10" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, -96)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox11" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, -160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox12" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(704, -160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox4" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, -32)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox5" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, -160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox6" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(703, -32)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox13" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, 808)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox14" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(704, 680)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox15" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, 744)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox16" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(704, 744)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox17" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, 808)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox18" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(448, 680)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox19" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, 744)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox20" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, 680)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox21" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(192, 744)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox22" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, 808)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox23" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(960, 680)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox24" parent="." instance=ExtResource("6_tt5vn")]
+position = Vector2(703, 808)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142

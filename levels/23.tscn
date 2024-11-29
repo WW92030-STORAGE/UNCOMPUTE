@@ -1,0 +1,537 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmtm5wxal281n"]
+
+[ext_resource type="Script" path="res://filtered_level.gd" id="1_mlwjl"]
+[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="2_bueqg"]
+[ext_resource type="AudioStream" uid="uid://b6slgyosm5w81" path="res://music/IMSLP847408-PMLP244087-bach-brah.mp3" id="3_jmxby"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="4_eklqr"]
+[ext_resource type="PackedScene" uid="uid://b5kxostudg23m" path="res://EscapeBall.tscn" id="7_o30te"]
+[ext_resource type="PackedScene" uid="uid://bc5mdgkjfuq3a" path="res://FixedBall.tscn" id="9_gkura"]
+
+[node name="FilteredLevel" type="Node2D"]
+script = ExtResource("1_mlwjl")
+
+[node name="BGElement" parent="." instance=ExtResource("2_bueqg")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("3_jmxby")
+autoplay = true
+
+[node name="FAILED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="FAILED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FAILED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+
+[node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "FAILED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+
+[node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="PASSED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="PASSED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PASSED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+
+[node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "PASSED
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+
+[node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eklqr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 140
+text = "N CLICKS
+"
+horizontal_alignment = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = 4096
+
+[node name="FixedBall" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(64, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall2" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(128, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall3" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(192, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall4" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(256, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall5" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(320, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall6" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(384, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall7" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(448, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall8" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(512, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall9" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(576, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall10" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(640, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall11" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(704, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall12" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(768, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall13" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(832, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall14" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(896, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall15" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(960, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall16" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(1024, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall17" parent="." instance=ExtResource("9_gkura")]
+position = Vector2(1088, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(96, 272)
+scale = Vector2(4, 4)
+
+[node name="EscapeBall2" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(160, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall3" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(224, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall4" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(288, 272)
+scale = Vector2(4, 4)
+
+[node name="EscapeBall31" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(224, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall32" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(288, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall33" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(352, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall34" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(416, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall35" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(736, 376)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall36" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(800, 376)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall37" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(864, 376)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall38" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(928, 376)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall39" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(768, 448)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall40" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(832, 448)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall41" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(896, 448)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall42" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(248, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall45" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(280, 512)
+scale = Vector2(4, 4)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall46" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(344, 512)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall47" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(800, 512)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall48" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(864, 512)
+scale = Vector2(4, 4)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall49" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(840, 584)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall51" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(480, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall52" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(544, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall53" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(608, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall54" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(672, 368)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall55" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(512, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall56" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(576, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall57" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(640, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall58" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(544, 504)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall59" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(608, 504)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall60" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(584, 576)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall50" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(312, 584)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall43" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(312, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall44" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(376, 440)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall5" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(352, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall6" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(416, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall7" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(480, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall8" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(544, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall9" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(608, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall10" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(672, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall11" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(736, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall12" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(800, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall13" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(864, 272)
+scale = Vector2(4, 4)
+
+[node name="EscapeBall14" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(928, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall15" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(992, 272)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall16" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(1056, 272)
+scale = Vector2(4, 4)
+
+[node name="EscapeBall17" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(320, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBall18" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(384, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall19" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(448, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall20" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(512, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall21" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(640, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall25" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(576, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall22" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(704, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall23" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(768, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall24" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(832, 216)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBall26" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(480, 160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBall27" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(544, 160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall28" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(608, 160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall29" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(672, 160)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBall30" parent="." instance=ExtResource("7_o30te")]
+position = Vector2(576, 104)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)

@@ -1,0 +1,235 @@
+[gd_scene load_steps=8 format=3 uid="uid://biyonugnd36rn"]
+
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_vfh45"]
+[ext_resource type="AudioStream" uid="uid://bio4csvrjnrih" path="res://IMSLP_INTRO_RONDO_PART2.mp3" id="2_xtban"]
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="3_d5qev"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="4_dlr5g"]
+[ext_resource type="PackedScene" uid="uid://b8fjslmbr1cmy" path="res://player_end.tscn" id="5_h5w6j"]
+[ext_resource type="PackedScene" uid="uid://cfmecn0xaqabn" path="res://player.tscn" id="6_d0ygx"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="7_xipoi"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_vfh45")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("2_xtban")
+autoplay = true
+
+[node name="FixedBox" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(80, 544)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox2" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(304, 544)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox3" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(512, 544)
+scale = Vector2(8.60109, 3.16627)
+
+[node name="FixedBox4" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(752, 544)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox6" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(304, 216)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox7" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(520, 224)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox9" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(976, 224)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox8" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(760, 232)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox5" parent="." instance=ExtResource("3_d5qev")]
+position = Vector2(976, 544)
+scale = Vector2(8.60109, 3.16627)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(304, 128)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox2" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(752, 128)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox3" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(976, 162)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox4" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(520, 128)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox5" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(752, 32)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox8" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(752, 80)
+scale = Vector2(7.89406, 2.75219)
+
+[node name="EscapeBox9" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(968, 10)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox12" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(528, 24)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox13" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(304, 8)
+scale = Vector2(7.89406, 2.75219)
+
+[node name="EscapeBox10" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(968, 58)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox11" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(520, 80)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox6" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(968, 106)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox7" parent="." instance=ExtResource("4_dlr5g")]
+position = Vector2(296, 72)
+scale = Vector2(7.89406, 2.75219)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="PlayerEnd" parent="." instance=ExtResource("5_h5w6j")]
+position = Vector2(968, 288)
+scale = Vector2(9.78703, -6.94568)
+
+[node name="Player" parent="." instance=ExtResource("6_d0ygx")]
+position = Vector2(64, 432)
+
+[node name="FAILED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="FAILED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FAILED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+
+[node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "FAILED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+
+[node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="PASSED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="PASSED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PASSED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+
+[node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "PASSED
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+
+[node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_xipoi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "N CLICKS
+"
+horizontal_alignment = 1

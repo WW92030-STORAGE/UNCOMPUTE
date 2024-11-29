@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=3 uid="uid://dajekrxutte32"]
+
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_0wvwn"]
+[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="2_r45yo"]
+[ext_resource type="Texture2D" uid="uid://fuxet1220xjt" path="res://bg/zigzag.png" id="3_jqrmu"]
+[ext_resource type="AudioStream" uid="uid://d3nj77c7hqgej" path="res://music/IMSLP_ANITRA.mp3" id="4_jsl3k"]
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="4_vwvwf"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="5_ri7md"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="8_joakw"]
+[ext_resource type="PackedScene" uid="uid://bc5mdgkjfuq3a" path="res://FixedBall.tscn" id="8_kygxf"]
+[ext_resource type="PackedScene" uid="uid://b5kxostudg23m" path="res://EscapeBall.tscn" id="9_arkkr"]
+
+[node name="LVL" type="Node2D"]
+script = ExtResource("1_0wvwn")
+
+[node name="BGElement" parent="." instance=ExtResource("2_r45yo")]
+metadata/IMAGE_TEXTURE = ExtResource("3_jqrmu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("4_jsl3k")
+autoplay = true
+
+[node name="FAILED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="FAILED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FAILED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+
+[node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "FAILED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+
+[node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="PASSED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="PASSED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PASSED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+
+[node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "PASSED
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+
+[node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("8_joakw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "N CLICKS
+"
+horizontal_alignment = 1
+
+[node name="EscapeBox" parent="." instance=ExtResource("5_ri7md")]
+position = Vector2(560, 568)
+scale = Vector2(28, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox" parent="." instance=ExtResource("4_vwvwf")]
+position = Vector2(560, 600)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox3" parent="." instance=ExtResource("4_vwvwf")]
+position = Vector2(400, 272)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox4" parent="." instance=ExtResource("4_vwvwf")]
+position = Vector2(672, 176)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox2" parent="." instance=ExtResource("4_vwvwf")]
+position = Vector2(928, 536)
+rotation = -0.224728
+scale = Vector2(16, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall" parent="." instance=ExtResource("8_kygxf")]
+position = Vector2(272, 600)
+rotation = 0.00822548
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBall2" parent="." instance=ExtResource("8_kygxf")]
+position = Vector2(208, 592)
+rotation = 0.00822548
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBall" parent="." instance=ExtResource("9_arkkr")]
+position = Vector2(400, 200)
+scale = Vector2(3, 3)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall2" parent="." instance=ExtResource("9_arkkr")]
+position = Vector2(672, 120)
+scale = Vector2(3.5, 3.5)
+metadata/COLOR = Color(0, 1, 0, 1)

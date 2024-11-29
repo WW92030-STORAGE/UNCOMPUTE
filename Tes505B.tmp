@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://l0g7ofb88dbk"]
+
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="1_2uw0g"]
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_cd8rg"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="2_t7s6j"]
+[ext_resource type="AudioStream" uid="uid://dmnqymtftw2ux" path="res://IMSLP_INTRO_RONDO.mp3" id="3_e4o16"]
+[ext_resource type="PackedScene" uid="uid://b5kxostudg23m" path="res://EscapeBall.tscn" id="5_8eq6p"]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource("1_cd8rg")
+
+[node name="FixedBox" parent="." instance=ExtResource("1_2uw0g")]
+physics_interpolation_mode = 1
+position = Vector2(480, 160)
+rotation = 0.174533
+scale = Vector2(4, 4)
+
+[node name="FixedBox2" parent="." instance=ExtResource("1_2uw0g")]
+position = Vector2(408, 160)
+rotation = -0.174533
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="FixedBox3" parent="." instance=ExtResource("1_2uw0g")]
+position = Vector2(88, 272)
+rotation = -0.174533
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox" parent="." instance=ExtResource("2_t7s6j")]
+position = Vector2(96, 32)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(336, 184)
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("3_e4o16")
+autoplay = true
+
+[node name="EscapeBox2" parent="." instance=ExtResource("2_t7s6j")]
+position = Vector2(96, 160)
+scale = Vector2(8, 2)
+metadata/GRAV = 3.142
+
+[node name="EscapeBall" parent="." instance=ExtResource("5_8eq6p")]
+position = Vector2(376, 232)
+scale = Vector2(2, 2)
+metadata/GRAV = 3.142
+
+[node name="EscapeBox3" parent="." instance=ExtResource("2_t7s6j")]
+position = Vector2(104, 352)
+scale = Vector2(6, 1)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 3.142

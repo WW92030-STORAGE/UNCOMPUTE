@@ -1,0 +1,258 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsrb7jkc7so7m"]
+
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_wtjh3"]
+[ext_resource type="AudioStream" uid="uid://bio4csvrjnrih" path="res://music/IMSLP_INTRO_RONDO_PART2.mp3" id="2_wmudl"]
+[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="2_xv5bg"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="3_4eh2d"]
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="4_throl"]
+[ext_resource type="PackedScene" uid="uid://cfmecn0xaqabn" path="res://player.tscn" id="5_dye3t"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="6_bw7ed"]
+[ext_resource type="PackedScene" uid="uid://b8fjslmbr1cmy" path="res://player_end.tscn" id="7_vdq40"]
+
+[node name="LVL" type="Node2D"]
+position = Vector2(0, 64)
+script = ExtResource("1_wtjh3")
+
+[node name="BGElement" parent="." instance=ExtResource("2_xv5bg")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 0.785398
+scale = Vector2(4, 4)
+stream = ExtResource("2_wmudl")
+autoplay = true
+
+[node name="FAILED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="FAILED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FAILED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+
+[node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "FAILED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+
+[node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="PASSED" type="MarginContainer" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="PASSED"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PASSED"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+
+[node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 400
+text = "PASSED
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+
+[node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "R TO RESET
+"
+horizontal_alignment = 1
+
+[node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "P TO QUIT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+horizontal_alignment = 1
+
+[node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4eh2d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "N CLICKS
+"
+horizontal_alignment = 1
+
+[node name="FixedBox" parent="." instance=ExtResource("4_throl")]
+position = Vector2(192, 544)
+scale = Vector2(16, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox5" parent="." instance=ExtResource("4_throl")]
+position = Vector2(192, 352)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox6" parent="." instance=ExtResource("4_throl")]
+position = Vector2(384, 352)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox10" parent="." instance=ExtResource("4_throl")]
+position = Vector2(640, 160)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox11" parent="." instance=ExtResource("4_throl")]
+position = Vector2(832, 160)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox12" parent="." instance=ExtResource("4_throl")]
+position = Vector2(1024, 160)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox7" parent="." instance=ExtResource("4_throl")]
+position = Vector2(575, 352)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox8" parent="." instance=ExtResource("4_throl")]
+position = Vector2(768, 352)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox9" parent="." instance=ExtResource("4_throl")]
+position = Vector2(960, 352)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox2" parent="." instance=ExtResource("4_throl")]
+position = Vector2(448, 544)
+scale = Vector2(16, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox3" parent="." instance=ExtResource("4_throl")]
+position = Vector2(703, 544)
+scale = Vector2(16, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox4" parent="." instance=ExtResource("4_throl")]
+position = Vector2(960, 544)
+scale = Vector2(16, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="Player" parent="." instance=ExtResource("5_dye3t")]
+position = Vector2(96, 448)
+scale = Vector2(2, 2)
+
+[node name="EscapeBox" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(384, 200)
+scale = Vector2(8, 8)
+
+[node name="EscapeBox2" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(192, 256)
+scale = Vector2(8, 8)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox3" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(544, 288)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox4" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(800, 288)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox12" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(992, 96)
+scale = Vector2(4, 4)
+
+[node name="EscapeBox13" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(1056, 96)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox5" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(928, 224)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox6" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(960, 288)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox7" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(800, 224)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox10" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(640, 96)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="EscapeBox8" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(640, 288)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox9" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(832, 96)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBox11" parent="." instance=ExtResource("6_bw7ed")]
+position = Vector2(1024, 32)
+scale = Vector2(8, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="PlayerEnd" parent="." instance=ExtResource("7_vdq40")]
+position = Vector2(1024, 0)
+scale = Vector2(8, 8)

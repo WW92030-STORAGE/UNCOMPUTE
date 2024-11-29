@@ -1,0 +1,45 @@
+MUSIC
+
+01 - 16
+
+CAMILLE SAINT SAENS INTRO AND RONDO CAPRICCIOSO - ELIAS GOLDSTEIN (IMSLP - EFF Open Audio License)
+https://www.ibiblio.org/pandora/HOMEPAGE.html
+IMSLP - https://imslp.org/wiki/Introduction_et_rondo_capriccioso,_Op.28_(Saint-Sa%C3%ABns,_Camille)
+
+17 - 24
+
+ANTONIO VIVALDI THE FOUR SEASONS - WHICHITA STATE UNIVERSITY (IMSLP - CC ATTR. SHARE ALIKE)
+https://imslp.org/wiki/Violin_Concerto_in_F_minor,_RV_297_(Vivaldi,_Antonio)
+
+EDVARD GRIEG PEER GYNT SUITE - PALO ALTO ORCHESTRA (IMSLP - CC ATTR.)
+https://imslp.org/wiki/Peer_Gynt_Suite_No.1%2C_Op.46_(Grieg%2C_Edvard)
+
+GUSTAV HOLST THE PLANETS - US AIR FORCE HERITAGE OF AMERICA BAND (PUBLIC DOMAIN)
+https://opengameart.org/content/holst-the-planets-suite
+
+LUDWIG VAN BEETHOVEN SONATA NO. 14 - PAUL PITMAN (IMSLP - PUBLIC DOMAIN / 2 seconds of silence removed)
+https://imslp.org/wiki/Piano_Sonata_No.14,_Op.27_No.2_(Beethoven,_Ludwig_van)
+
+J. S. BACH VIOLIN CONCERTO 1041 - CAMBRIDGE CONCENTUS (IMSLP - CC ATTR. / 9 seconds of silence removed)
+https://imslp.org/wiki/Violin_Concerto_in_A_minor%2C_BWV_1041_(Bach%2C_Johann_Sebastian)
+
+J. S. BACH PARTITA NO. 2 - LUIS KOLODIN (IMSLP - CC ATTR. SHARE ALIKE / Compressed)
+https://imslp.org/wiki/Violin_Partita_No.2_in_D_minor%2C_BWV_1004_(Bach%2C_Johann_Sebastian)
+
+GUSTAV HOLST THE PLANETS - LONDON SYMPHONY ORCHESTRA (IMSLP - PUBLIC DOMAIN)
+https://imslp.org/wiki/The_Planets,_Op.32_(Holst,_Gustav)
+
+SFX
+
+Ding - https://freesound.org/people/5ro4/sounds/611111/
+Scratch - https://freesound.org/people/luffy/sounds/3536/
+
+ASSETS
+
+Visual assets are (almost if not all) my own. They are drawn from simple geometric shapes in Gimp and MS Paint.
+
+MECHANICS/CONCEPTS
+
+Mechanics inspired by a certain Flash game by Gaz Thomas.
+Pulsing objects based on Geometry Dash (I use them a lot.)
+Certain progression things inspired by The Witness

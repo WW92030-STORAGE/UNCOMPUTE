@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfmecn0xaqabn"]
+
+[ext_resource type="Texture2D" uid="uid://qapx1op52fl6" path="res://magenta.png" id="1_5od3w"]
+[ext_resource type="PhysicsMaterial" uid="uid://fwp6pmbkjsgu" path="res://PlayerMaterial.tres" id="1_6rnka"]
+[ext_resource type="Script" path="res://player.gd" id="1_ofxet"]
+[ext_resource type="Texture2D" uid="uid://d2kuir8vtaw4o" path="res://UPPERTRIX.png" id="4_dfx61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f16vo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diuuy"]
+size = Vector2(16, 16)
+
+[node name="Player" type="RigidBody2D" groups=["PLAYER"]]
+physics_material_override = ExtResource("1_6rnka")
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("1_ofxet")
+metadata/GRAV = 0.0
+metadata/PASSING = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f16vo")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5od3w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_diuuy")
+
+[node name="Grav" type="Sprite2D" parent="." groups=["PULSING"]]
+rotation = 0.785398
+scale = Vector2(0.03125, 0.03125)
+texture = ExtResource("4_dfx61")

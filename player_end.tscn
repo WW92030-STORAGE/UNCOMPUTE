@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8fjslmbr1cmy"]
+
+[ext_resource type="Script" path="res://player_end.gd" id="1_7skrc"]
+[ext_resource type="Texture2D" uid="uid://c2y8yj80pp53w" path="res://blank.png" id="2_x44g6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbnjj"]
+size = Vector2(16, 16)
+
+[node name="PlayerEnd" type="Node2D" groups=["PLAYER_END"]]
+script = ExtResource("1_7skrc")
+
+[node name="END_AREA" type="Area2D" parent="." groups=["PLAYER_END"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="END_AREA" groups=["PLAYER_END"]]
+shape = SubResource("RectangleShape2D_qbnjj")
+
+[node name="Sprite2D" type="Sprite2D" parent="END_AREA" groups=["PLAYER_END"]]
+modulate = Color(1, 1, 1, 0.25098)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_x44g6")

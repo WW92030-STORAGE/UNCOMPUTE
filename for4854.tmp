@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddsnwtsbson6e"]
+
+[ext_resource type="Texture2D" uid="uid://dx731kuhl6fed" path="res://triangleanim/triangle_anim.tres" id="1_i8g8a"]
+[ext_resource type="Script" path="res://force_field.gd" id="1_u3ytk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq3xa"]
+size = Vector2(16, 16)
+
+[node name="ForceField" type="CharacterBody2D" groups=["FORCE_FIELD"]]
+texture_repeat = 2
+scale = Vector2(16, 32)
+script = ExtResource("1_u3ytk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+rotation = 1.5708
+scale = Vector2(1, 1)
+texture = ExtResource("1_i8g8a")
+region_enabled = true
+region_rect = Rect2(-16, -16, 16, 16)
+metadata/GRAV = 0.0
+
+[node name="Area2D" type="Area2D" parent="."]
+texture_repeat = 2
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["FORCE_FIELD"]]
+modulate = Color(0, 0, 0, 1)
+texture_repeat = 2
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rq3xa")

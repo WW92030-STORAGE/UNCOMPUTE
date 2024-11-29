@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdm3nqkkpmkec"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://b0k3pixhsrei8" path="res://TheMaterial.tres" id="1_m8bcq"]
+[ext_resource type="Texture2D" uid="uid://dsuldk25i3q1x" path="res://BOX_256.png" id="2_2lkww"]
+[ext_resource type="Script" path="res://escape_box.gd" id="2_2uxsa"]
+[ext_resource type="Texture2D" uid="uid://d2kuir8vtaw4o" path="res://UPPERTRIX.png" id="3_48g06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arkor"]
+size = Vector2(16, 16)
+
+[node name="EscapeBox" type="RigidBody2D" groups=["RIGIDBODY"]]
+physics_material_override = ExtResource("1_m8bcq")
+contact_monitor = true
+script = ExtResource("2_2uxsa")
+metadata/COLOR = Color(1, 0, 0, 1)
+metadata/GRAV = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_arkor")
+
+[node name="COLOR" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("2_2lkww")
+
+[node name="Grav" type="Sprite2D" parent="." groups=["PULSING"]]
+rotation = 0.785398
+scale = Vector2(0.03125, 0.03125)
+texture = ExtResource("3_48g06")
