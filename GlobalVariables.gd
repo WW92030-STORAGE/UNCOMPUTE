@@ -58,8 +58,6 @@ func _process(delta: float) -> void:
 	if VOLZEROTIMER >= 30:
 		volume = 0
 	
-	print(volume)
-	
 	# volume = specanal.get_magnitude_for_frequency_range(0, 10000).length()
 	var normalized = sigmoid((volume + 60), 1.0 / 75.0)
 	if (normalized < 0):
