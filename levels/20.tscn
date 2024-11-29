@@ -422,12 +422,12 @@ scale = Vector2(4, 2)
 metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="EscapeBox105" parent="." instance=ExtResource("7_b8rug")]
-position = Vector2(721, 616)
+position = Vector2(705, 616)
 scale = Vector2(4, 2)
 metadata/COLOR = Color(0, 0.988235, 0, 1)
 
 [node name="EscapeBox106" parent="." instance=ExtResource("7_b8rug")]
-position = Vector2(936, 560)
+position = Vector2(912, 560)
 scale = Vector2(4, 2)
 metadata/COLOR = Color(0, 0.988235, 0, 1)
 metadata/GRAV = 3.142
@@ -867,10 +867,10 @@ position = Vector2(608, 584)
 scale = Vector2(3, 6)
 
 [node name="ForceField3" parent="." instance=ExtResource("11_qcwur")]
-position = Vector2(1048, 584)
-scale = Vector2(3, 6)
+position = Vector2(1008, 584)
+scale = Vector2(2, 6)
 
 [node name="ForceField2" parent="." instance=ExtResource("11_qcwur")]
-position = Vector2(833, 584)
+position = Vector2(809, 584)
 scale = Vector2(3, 6)
 metadata/GRAV = 3.142
