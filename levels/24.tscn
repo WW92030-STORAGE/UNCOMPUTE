@@ -133,6 +133,7 @@ text = "N CLICKS
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -155,7 +156,6 @@ metadata/COLOR = Color(0, 1, 0, 1)
 [node name="FixedBox6" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(416, 416)
 scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox11" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(416, 96)
@@ -212,7 +212,7 @@ metadata/COLOR = Color(0, 0, 1, 1)
 [node name="FixedBox14" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(96, 288)
 scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
+metadata/COLOR = Color(0, 1, 0, 1)
 
 [node name="FixedBox15" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(928, 288)
@@ -222,7 +222,6 @@ metadata/COLOR = Color(0, 0, 1, 1)
 [node name="FixedBox19" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(800, 160)
 scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox20" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(864, 352)
@@ -232,10 +231,14 @@ metadata/COLOR = Color(0, 0, 1, 1)
 [node name="FixedBox21" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(1056, 352)
 scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox23" parent="." instance=ExtResource("6_xw8mv")]
 position = Vector2(992, 480)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
+
+[node name="FixedBox25" parent="." instance=ExtResource("6_xw8mv")]
+position = Vector2(928, 96)
 scale = Vector2(4, 4)
 metadata/COLOR = Color(0, 0, 1, 1)
 
@@ -291,6 +294,11 @@ position = Vector2(800, -16)
 scale = Vector2(4, 4)
 metadata/COLOR = Color(0, 0, 0, 1)
 
+[node name="EscapeBox16" parent="." instance=ExtResource("8_g7lk6")]
+position = Vector2(928, -120)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 0, 1)
+
 [node name="EscapeBox2" parent="." instance=ExtResource("8_g7lk6")]
 position = Vector2(32, 352)
 scale = Vector2(4, 4)
@@ -307,6 +315,12 @@ metadata/GRAV = 1.571
 position = Vector2(544, 352)
 scale = Vector2(4, 4)
 metadata/GRAV = 4.712
+
+[node name="EscapeBox15" parent="." instance=ExtResource("8_g7lk6")]
+position = Vector2(1160, 352)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 1, 0, 1)
+metadata/GRAV = 1.571
 
 [node name="EscapeBox9" parent="." instance=ExtResource("8_g7lk6")]
 position = Vector2(544, 448)
