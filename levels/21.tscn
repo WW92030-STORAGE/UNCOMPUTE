@@ -148,52 +148,52 @@ scale = Vector2(2, 2)
 [node name="FixedBox" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(320, 352)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox2" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(576, 352)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox3" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(576, 288)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox5" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(832, 352)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox6" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(832, 288)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox7" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(1088, 352)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox8" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(1088, 288)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox4" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(320, 288)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox9" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(64, 352)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox10" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(64, 288)
 scale = Vector2(6, 2)
-metadata/COLOR = Color(0, 1, 0, 1)
+metadata/COLOR = Color(0, 0, 1, 1)
 
 [node name="FixedBox11" parent="." instance=ExtResource("5_otq8k")]
 position = Vector2(576, 16)
