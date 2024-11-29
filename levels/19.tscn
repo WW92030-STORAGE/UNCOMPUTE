@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtbvb2etcsq4y"]
+[gd_scene load_steps=12 format=3 uid="uid://dtbvb2etcsq4y"]
 
 [ext_resource type="Script" path="res://shader_level.gd" id="1_mt1ng"]
 [ext_resource type="Shader" path="res://shaders/rot240.gdshader" id="2_7ux0k"]
@@ -7,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://c14emdm6g7lef" path="res://music/USAF_URANUS.ogg" id="5_43chw"]
 [ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="6_r3gms"]
 [ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="7_q4vrc"]
+[ext_resource type="PackedScene" uid="uid://cfmecn0xaqabn" path="res://player.tscn" id="9_jqccj"]
 [ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="10_a2i1i"]
+[ext_resource type="PackedScene" uid="uid://b8fjslmbr1cmy" path="res://player_end.tscn" id="10_rgffd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gmxpi"]
 
@@ -312,3 +314,15 @@ metadata/COLOR = Color(0, 1, 0, 1)
 [node name="EscapeBox5" parent="." instance=ExtResource("7_q4vrc")]
 position = Vector2(480, 480)
 scale = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("9_jqccj")]
+position = Vector2(544, 40)
+scale = Vector2(2, 2)
+
+[node name="PlayerEnd" parent="." instance=ExtResource("10_rgffd")]
+position = Vector2(408, 512)
+scale = Vector2(4, 8)
+
+[node name="PlayerEnd2" parent="." instance=ExtResource("10_rgffd")]
+position = Vector2(680, 512)
+scale = Vector2(4, 8)

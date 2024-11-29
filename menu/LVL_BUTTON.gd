@@ -30,7 +30,7 @@ func _on_mouse_entered() -> void:
 	if args == "RGB":
 		var filters = [GlobalVariables.RED, GlobalVariables.GREEN, GlobalVariables.BLUE]
 		var names = ["PRISM", "NEXIE", "AZION"]
-		names = ["RECON", "GUARD", "BLITZ"]
+		# names = ["RECON", "GUARD", "BLITZ"]
 		var bgs = ["res://bg/triangles.png", "res://bg/circles.png", "res://bg/checkerdiag.png"]
 		var ii = randi_range(0, 2)
 		set_meta("FILTER", filters[ii])
