@@ -38,7 +38,7 @@ var HITS = 0
 
 var LEVELS = ["RED", "GREEN", "BLUE", "BLACK", "TOGETHER NOW", "DISORIENTATION", "PERMUTE", "REDIRECT", 
 "REPULSION", "MAGENTA!!", "ASCENT", "VORTEX", "ASCENT II", "DUAL", "COLUMNS", "CONFINEMENT", 
-"ABYSS", "WIRE", "COSMO", "CIRCUIT", "MERSENNE", "ORBIT", "PRISM", "SPECTRUM"]
+"ABYSS", "WIRE", "ORBIT", "CIRCUIT", "MERSENNE", "COSMO", "PRISM", "SPECTRUM"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

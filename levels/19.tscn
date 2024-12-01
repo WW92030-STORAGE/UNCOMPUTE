@@ -1,29 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtbvb2etcsq4y"]
+[gd_scene load_steps=10 format=3 uid="uid://cfoxohp3u7nxb"]
 
-[ext_resource type="Script" path="res://shader_level.gd" id="1_mt1ng"]
-[ext_resource type="Shader" path="res://shaders/rot240.gdshader" id="2_7ux0k"]
-[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="3_n16cw"]
-[ext_resource type="Texture2D" uid="uid://chnwyimd2qd7x" path="res://bg/checkerdiag.png" id="4_xj43y"]
-[ext_resource type="AudioStream" uid="uid://c14emdm6g7lef" path="res://music/USAF_URANUS.ogg" id="5_43chw"]
-[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="6_r3gms"]
-[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="7_q4vrc"]
-[ext_resource type="PackedScene" uid="uid://cfmecn0xaqabn" path="res://player.tscn" id="9_jqccj"]
-[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="10_a2i1i"]
-[ext_resource type="PackedScene" uid="uid://b8fjslmbr1cmy" path="res://player_end.tscn" id="10_rgffd"]
+[ext_resource type="Script" path="res://LEVEL.gd" id="1_dx2pw"]
+[ext_resource type="PackedScene" uid="uid://53abbuy4q1y" path="res://bg/bg_element.tscn" id="2_smrd6"]
+[ext_resource type="AudioStream" uid="uid://b60x1hl4m0crg" path="res://music/IMSLP_MOONLIGHT.mp3" id="3_3t8fu"]
+[ext_resource type="Theme" uid="uid://dg0bvmeh02vbe" path="res://menu/UITheme.tres" id="4_b3rgd"]
+[ext_resource type="PackedScene" uid="uid://ddsnwtsbson6e" path="res://force_field.tscn" id="5_4op1w"]
+[ext_resource type="PackedScene" uid="uid://cdm3nqkkpmkec" path="res://EscapeBox.tscn" id="5_8b6fg"]
+[ext_resource type="PackedScene" uid="uid://bc5mdgkjfuq3a" path="res://FixedBall.tscn" id="5_j5mui"]
+[ext_resource type="PackedScene" uid="uid://c38a0lhwkclx7" path="res://FixedBox.tscn" id="6_iplx3"]
+[ext_resource type="PackedScene" uid="uid://b5kxostudg23m" path="res://EscapeBall.tscn" id="6_jrg0a"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gmxpi"]
+[node name="LVL" type="Node2D"]
+script = ExtResource("1_dx2pw")
 
-[node name="ShaderLevel" type="Node2D"]
-script = ExtResource("1_mt1ng")
-metadata/SHADER = ExtResource("2_7ux0k")
-
-[node name="BGElement" parent="." instance=ExtResource("3_n16cw")]
-metadata/IMAGE_TEXTURE = ExtResource("4_xj43y")
+[node name="BGElement" parent="." instance=ExtResource("2_smrd6")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 rotation = 0.785398
 scale = Vector2(4, 4)
-stream = ExtResource("5_43chw")
+stream = ExtResource("3_3t8fu")
 autoplay = true
 
 [node name="FAILED" type="MarginContainer" parent="."]
@@ -42,11 +37,11 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="FAILED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 
 [node name="FAILED" type="Label" parent="FAILED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 400
 text = "FAILED!"
@@ -54,11 +49,11 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="FAILED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 
 [node name="R TO RESET" type="Label" parent="FAILED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "R TO RESET
 "
@@ -66,7 +61,7 @@ horizontal_alignment = 1
 
 [node name="P TO QUIT" type="Label" parent="FAILED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "P TO QUIT"
 horizontal_alignment = 1
@@ -87,11 +82,11 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 
 [node name="PASSED" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 400
 text = "PASSED
@@ -100,11 +95,11 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 
 [node name="R TO RESET" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "R TO RESET
 "
@@ -112,217 +107,101 @@ horizontal_alignment = 1
 
 [node name="P TO QUIT" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "P TO QUIT"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 horizontal_alignment = 1
 
 [node name="NCLICKS" type="Label" parent="PASSED/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("10_a2i1i")
+theme = ExtResource("4_b3rgd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 140
 text = "N CLICKS
 "
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1200.0
-offset_bottom = 1200.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ForceField" parent="." instance=ExtResource("5_4op1w")]
+position = Vector2(576, 64)
+scale = Vector2(32, 4)
+metadata/GRAV = 1.571
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
-z_index = 4096
-material = SubResource("ShaderMaterial_gmxpi")
-layout_mode = 2
-color = Color(1, 1, 1, 0)
+[node name="ForceField3" parent="." instance=ExtResource("5_4op1w")]
+position = Vector2(512, 576)
+scale = Vector2(32, 4)
+metadata/GRAV = 4.712
 
-[node name="FixedBox" parent="." instance=ExtResource("6_r3gms")]
-position = Vector2(544, 592)
-scale = Vector2(40, 2)
-metadata/COLOR = Color(0, 0, 1, 1)
+[node name="ForceField2" parent="." instance=ExtResource("5_4op1w")]
+position = Vector2(288, 288)
+scale = Vector2(4, 32)
 
-[node name="EscapeBox" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(336, 544)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox2" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(336, 480)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox3" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(336, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox4" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(480, 544)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox6" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(480, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox7" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(608, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox10" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(752, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox11" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(752, 480)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox12" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(752, 544)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox13" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(752, 352)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox14" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(656, 352)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox15" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(592, 352)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox16" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(496, 352)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox17" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(432, 352)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox25" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(408, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 0, 1)
+[node name="ForceField4" parent="." instance=ExtResource("5_4op1w")]
+position = Vector2(800, 352)
+scale = Vector2(4, 32)
 metadata/GRAV = 3.142
 
-[node name="EscapeBox34" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(680, 416)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 0, 1)
-metadata/GRAV = 3.142
-
-[node name="EscapeBox18" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(336, 352)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox19" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(384, 288)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox20" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(544, 288)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox21" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(704, 288)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox22" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(624, 288)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox23" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(464, 288)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox24" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(424, 224)
-rotation = -0.00511571
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 0, 1, 1)
-
-[node name="EscapeBox26" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(504, 224)
-scale = Vector2(4, 4)
+[node name="FixedBox" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(544, 320)
+scale = Vector2(28, 28)
 metadata/COLOR = Color(0, 1, 0, 1)
 
-[node name="EscapeBox30" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(464, 160)
+[node name="FixedBox2" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(224, 64)
 scale = Vector2(4, 4)
 metadata/COLOR = Color(0, 0, 1, 1)
 
-[node name="EscapeBox31" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(624, 160)
+[node name="FixedBox3" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(288, 640)
 scale = Vector2(4, 4)
 metadata/COLOR = Color(0, 0, 1, 1)
 
-[node name="EscapeBox32" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(584, 96)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox33" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(504, 96)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox28" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(584, 224)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox29" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(544, 160)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox27" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(664, 224)
+[node name="FixedBox4" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(864, 576)
 scale = Vector2(4, 4)
 metadata/COLOR = Color(0, 0, 1, 1)
 
-[node name="EscapeBox8" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(608, 480)
-scale = Vector2(4, 4)
-
-[node name="EscapeBox9" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(608, 544)
-scale = Vector2(4, 4)
-metadata/COLOR = Color(0, 1, 0, 1)
-
-[node name="EscapeBox5" parent="." instance=ExtResource("7_q4vrc")]
-position = Vector2(480, 480)
-scale = Vector2(4, 4)
-
-[node name="Player" parent="." instance=ExtResource("9_jqccj")]
-position = Vector2(544, 40)
+[node name="FixedBox7" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(848, 392)
 scale = Vector2(2, 2)
 
-[node name="PlayerEnd" parent="." instance=ExtResource("10_rgffd")]
-position = Vector2(408, 512)
-scale = Vector2(4, 8)
+[node name="FixedBox5" parent="." instance=ExtResource("6_iplx3")]
+position = Vector2(800, 0)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
 
-[node name="PlayerEnd2" parent="." instance=ExtResource("10_rgffd")]
-position = Vector2(680, 512)
-scale = Vector2(4, 8)
+[node name="EscapeBall" parent="." instance=ExtResource("6_jrg0a")]
+position = Vector2(288, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall2" parent="." instance=ExtResource("6_jrg0a")]
+position = Vector2(544, 576)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 1, 0, 1)
+
+[node name="EscapeBall3" parent="." instance=ExtResource("6_jrg0a")]
+position = Vector2(800, 320)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBall4" parent="." instance=ExtResource("6_jrg0a")]
+position = Vector2(544, 64)
+scale = Vector2(2, 2)
+metadata/COLOR = Color(0, 0, 0, 1)
+
+[node name="EscapeBox" parent="." instance=ExtResource("5_8b6fg")]
+position = Vector2(920, 288)
+rotation = 0.15927
+scale = Vector2(4, 20)
+metadata/COLOR = Color(0, 0, 1, 1)
+metadata/GRAV = 3.142
+
+[node name="FixedBall" parent="." instance=ExtResource("5_j5mui")]
+position = Vector2(968, 104)
+scale = Vector2(4, 4)
+metadata/COLOR = Color(0, 0, 1, 1)
